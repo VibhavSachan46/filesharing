@@ -6,7 +6,7 @@ const { cloudinaryConnect } = require("./config/cloudinary.config")
 const cookieParser = require('cookie-parser');
 const fileUpload = require("express-fileupload");
 const cors = require('cors');
-
+require('dotenv').config()
 const app = express()
 
 db.connect()
@@ -31,8 +31,6 @@ const PORT = process.env.PORT || 4000
 // routes
 app.use("/api/v1/auth", userRoutes)
 app.use("/api/v1", fileUploadRoutes)
-
-
 
 app.get("/", (req, res) => {
     return res.json({
