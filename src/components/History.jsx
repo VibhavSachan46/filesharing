@@ -64,7 +64,7 @@ const History = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className='p-4'>
+    <div className='p-4 max-h-full'>
       {/* Navbar */}
       <div className='flex items-center justify-between p-4 bg-gray-800 text-black rounded-lg mb-8'>
         <div className='flex items-center'>

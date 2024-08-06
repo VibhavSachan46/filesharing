@@ -26,7 +26,7 @@ function App() {
             <Route path='/' element={<LandingPage />} />
           )}
           <Route path='/login' element={isLoggedIn ? <Navigate to="/dashboard" /> : <Login />} />
-          <Route path='/signup' element={<Signup />} />
+          <Route path='/signup' element={isLoggedIn ? <Navigate to="/dashboard" /> : <Signup />} />
           <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </Router>

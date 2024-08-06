@@ -32,9 +32,9 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='flex flex-col md:flex-row h-screen'>
+    <div className='flex flex-col md:flex-row h-full'>
       {/* Left component => Navigation bar */}
-      <div className='bg-black w-full md:w-[20%] flex flex-col text-2xl p-4 md:p-0 items-center'>
+      <div className='bg-black w-full max-h-full md:w-[20%] flex flex-col text-2xl p-4 md:p-0 items-center'>
         <p className='font-semibold text-5xl my-8 md:my-16 font-inter text-white'>
           Flick Files
         </p>
@@ -70,7 +70,7 @@ const Dashboard = () => {
       </div>
 
       {/* Right part => Content */}
-      <div className='bg-richblue-200 w-full md:w-[80%] p-4 flex-grow'>
+      <div className='bg-richblue-200 w-full max-h-full md:w-[80%] p-4 flex-grow'>
         {renderContent()}
       </div>
     </div>
