@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const fileURLSchema = new mongoose.Schema({
     name: {
@@ -8,10 +8,16 @@ const fileURLSchema = new mongoose.Schema({
     url: {
         type: String
     },
+    fileType: {
+        type: String
+    },
+    size: {
+        type: Number, // File size in MB
+    },
     Author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     }
-}, { timestamps: true })
+}, { timestamps: true });
 
-module.exports = mongoose.model("File", fileURLSchema)
+module.exports = mongoose.model("File", fileURLSchema);
