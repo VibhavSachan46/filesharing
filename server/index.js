@@ -7,6 +7,8 @@ const cookieParser = require('cookie-parser');
 const fileUpload = require("express-fileupload");
 const cors = require('cors');
 require('dotenv').config()
+
+
 const app = express()
 
 db.connect()
@@ -23,7 +25,7 @@ app.use(
 	})
 )
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT
 
 
 
