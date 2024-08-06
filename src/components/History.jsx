@@ -4,6 +4,7 @@ import axios from 'axios';
 import { FaCopy } from "react-icons/fa";
 import toast from 'react-hot-toast';
 import { FaRegFileAudio } from "react-icons/fa6";
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 const History = () => {
   const [uploadHistory, setUploadHistory] = useState([]);
@@ -15,7 +16,7 @@ const History = () => {
       const toastId = toast.loading("Loading...");
       try {
         const token = localStorage.getItem('token_filesharing'); // Retrieve token from local storage
-        const response = await axios.get('http://localhost:4000/api/v1/auth/getUserDetails', {
+        const response = await axios.get(`${BASE_URL}/auth/getUserDetails`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

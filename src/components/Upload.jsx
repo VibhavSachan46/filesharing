@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 const Upload = ({ setSelectedComponent }) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -28,7 +29,7 @@ const Upload = ({ setSelectedComponent }) => {
 
     try {
       const toastId = toast.loading("Uploading your file...");
-      const response = await axios.post('http://localhost:4000/api/v1/upload', formData, {
+      const response = await axios.post(`${BASE_URL}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${localStorage.getItem('token_filesharing')}`,
